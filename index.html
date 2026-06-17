@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sorting Algorithm Performance Evaluator</title>
+<title>Sorting algorithm performance evaluator</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300..700&display=swap" rel="stylesheet">
@@ -132,10 +132,6 @@ main{max-width:1280px;margin:0 auto;padding:var(--space-8) var(--space-6);width:
   transition:width 0.3s ease;
 }
 .status-text{font-size:var(--text-xs);color:var(--color-text-muted);margin-top:var(--space-2);min-height:1.2em;font-family:var(--font-display)}
-.chart-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:var(--space-6);
-}
 .chart-card{
   background:var(--color-surface);border:1px solid var(--color-border);
   border-radius:var(--radius-xl);padding:var(--space-6);
@@ -146,7 +142,7 @@ main{max-width:1280px;margin:0 auto;padding:var(--space-8) var(--space-6);width:
   color:var(--color-text);margin-bottom:var(--space-1);
 }
 .chart-card-sub{font-size:var(--text-xs);color:var(--color-text-muted);margin-bottom:var(--space-4)}
-.chart-wrap{position:relative;height:300px}
+.chart-wrap{position:relative;height:380px}
 .table-wrap{
   background:var(--color-surface);border:1px solid var(--color-border);
   border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-sm);
@@ -211,9 +207,8 @@ main{max-width:1280px;margin:0 auto;padding:var(--space-8) var(--space-6);width:
 .complexity-val{font-family:var(--font-display);font-weight:500}
 @media(max-width:768px){
   main{padding:var(--space-6) var(--space-4)}
-  .chart-grid{grid-template-columns:1fr}
   .param-grid{grid-template-columns:repeat(2,1fr)}
-  .chart-wrap{height:240px}
+  .chart-wrap{height:280px}
 }
 @media(max-width:480px){
   .param-grid{grid-template-columns:1fr}
@@ -228,7 +223,7 @@ main{max-width:1280px;margin:0 auto;padding:var(--space-8) var(--space-6);width:
 <header>
   <div class="header-inner">
     <a class="logo" href="#">
-      <svg class="logo-svg" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-label="Sort Benchmark Logo" xmlns="http://www.w3.org/2000/svg">
+      <svg class="logo-svg" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-label="Sort Benchmark logo" xmlns="http://www.w3.org/2000/svg">
         <rect x="1" y="1" width="26" height="26" rx="7" stroke="currentColor" stroke-width="1.5"/>
         <rect x="5" y="18" width="3" height="6" rx="1" fill="var(--color-primary)"/>
         <rect x="10" y="13" width="3" height="11" rx="1" fill="var(--color-primary)" opacity="0.8"/>
@@ -236,7 +231,7 @@ main{max-width:1280px;margin:0 auto;padding:var(--space-8) var(--space-6);width:
         <rect x="20" y="5" width="3" height="19" rx="1" fill="var(--color-primary)" opacity="0.55"/>
         <polyline points="6.5,17 11.5,12 16.5,8 21.5,4.5" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
       </svg>
-      <span class="logo-text">Sort Benchmark</span>
+      <span class="logo-text">Sort benchmark</span>
     </a>
     <div class="header-right">
       <button class="theme-toggle" data-theme-toggle aria-label="Switch theme">
@@ -251,22 +246,22 @@ main{max-width:1280px;margin:0 auto;padding:var(--space-8) var(--space-6);width:
   <div class="control-panel">
     <div class="param-grid">
       <div class="param-group">
-        <label class="param-label" for="p-n">Base Size (n)</label>
+        <label class="param-label" for="p-n">Base size (n)</label>
         <input class="param-input" id="p-n" type="number" value="500" min="100" max="5000" step="100">
         <span class="param-hint">e.g. 500</span>
       </div>
       <div class="param-group">
-        <label class="param-label" for="p-range">Value Range</label>
+        <label class="param-label" for="p-range">Value range</label>
         <input class="param-input" id="p-range" type="number" value="10000" min="100" max="1000000" step="1000">
         <span class="param-hint">e.g. 10000</span>
       </div>
       <div class="param-group">
         <label class="param-label" for="p-times">Rounds (Times)</label>
         <input class="param-input" id="p-times" type="number" value="5" min="1" max="10" step="1">
-        <span class="param-hint">test 1n, 2n, ... Tn</span>
+        <span class="param-hint">test 1n, 2n, … Tn</span>
       </div>
       <div class="param-group">
-        <label class="param-label" for="p-loops">Loops / Sort</label>
+        <label class="param-label" for="p-loops">Loops / sort</label>
         <input class="param-input" id="p-loops" type="number" value="7" min="3" max="30" step="1">
         <span class="param-hint">for trimmed avg</span>
       </div>
@@ -279,7 +274,7 @@ main{max-width:1280px;margin:0 auto;padding:var(--space-8) var(--space-6);width:
     <div class="btn-row">
       <button class="btn-run" id="btn-run" onclick="runBenchmark()">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5,3 19,12 5,21"/></svg>
-        Run Benchmark
+        Run benchmark
       </button>
       <span class="status-text" id="status-text">Configure parameters and press Run.</span>
     </div>
@@ -291,7 +286,7 @@ main{max-width:1280px;margin:0 auto;padding:var(--space-8) var(--space-6);width:
 <div class="algo-legend" id="algo-legend"></div>
 <div class="tab-row">
   <button class="tab-btn active" onclick="switchTab('charts',this)">Charts</button>
-  <button class="tab-btn" onclick="switchTab('table',this)">Data Table</button>
+  <button class="tab-btn" onclick="switchTab('table',this)">Data table</button>
   <button class="tab-btn" onclick="switchTab('complexity',this)">Complexity</button>
 </div>
 <div id="tab-charts">
@@ -301,26 +296,11 @@ main{max-width:1280px;margin:0 auto;padding:var(--space-8) var(--space-6);width:
       <h3>No data yet</h3>
       <p>Set your parameters and click Run to benchmark all 9 sorting algorithms.</p>
     </div>
-    <div class="chart-grid" id="chart-grid" style="display:none">
+    <div id="chart-single" style="display:none">
       <div class="chart-card">
-        <div class="chart-card-title">Execution Time</div>
-        <div class="chart-card-sub">Average (ms) — trimmed across multiple runs</div>
+        <div class="chart-card-title">Execution time</div>
+        <div class="chart-card-sub">Average time (ms) — trimmed mean across multiple runs</div>
         <div class="chart-wrap"><canvas id="chart-time"></canvas></div>
-      </div>
-      <div class="chart-card">
-        <div class="chart-card-title">Comparisons</div>
-        <div class="chart-card-sub">Total comparison operations</div>
-        <div class="chart-wrap"><canvas id="chart-comp"></canvas></div>
-      </div>
-      <div class="chart-card">
-        <div class="chart-card-title">Swaps / Writes</div>
-        <div class="chart-card-sub">Total swap / write operations</div>
-        <div class="chart-wrap"><canvas id="chart-swap"></canvas></div>
-      </div>
-      <div class="chart-card">
-        <div class="chart-card-title">Time per Comparison</div>
-        <div class="chart-card-sub">Efficiency ratio (ns / comparison)</div>
-        <div class="chart-wrap"><canvas id="chart-ratio"></canvas></div>
       </div>
     </div>
   </div>
@@ -469,7 +449,7 @@ function chartOptions(yLabel,formatter){
       }
     },
     scales:{
-      x:{title:{display:true,text:'Array Size (n)',color:tickColor},ticks:{color:tickColor},grid:{color:gridColor}},
+      x:{title:{display:true,text:'Array size (n)',color:tickColor},ticks:{color:tickColor},grid:{color:gridColor}},
       y:{title:{display:true,text:yLabel,color:tickColor},ticks:{color:tickColor},grid:{color:gridColor},beginAtZero:true}
     }
   };
@@ -494,23 +474,8 @@ function renderChart(id,metric,yLabel,formatter){
 function renderCharts(){
   if(!benchmarkData)return;
   document.getElementById('empty-charts').style.display='none';
-  document.getElementById('chart-grid').style.display='grid';
+  document.getElementById('chart-single').style.display='block';
   renderChart('chart-time','timeMs','Time (ms)',v=>v.toFixed(3)+' ms');
-  renderChart('chart-comp','comparisons','Comparisons',v=>v.toLocaleString());
-  renderChart('chart-swap','swaps','Swaps/Writes',v=>v.toLocaleString());
-  const{results,Times,n}=benchmarkData;
-  const sizes=Array.from({length:Times},(_,i)=>n*(i+1));
-  const canvas=document.getElementById('chart-ratio');
-  if(charts['chart-ratio'])charts['chart-ratio'].destroy();
-  const datasets=SORTS.filter(s=>visibleAlgos.has(s.name)).map(s=>{
-    const col=getColor(s.color);
-    const d=sizes.map(sz=>{
-      const r=results.find(x=>x.n===sz&&x.algo===s.name);
-      return r&&r.comparisons>0?parseFloat(((r.timeMs*1e6)/r.comparisons).toFixed(4)):null;
-    });
-    return{label:s.name,data:d,borderColor:col,backgroundColor:col+'28',pointBackgroundColor:col,pointRadius:5,pointHoverRadius:7,borderWidth:2,tension:0.35,fill:false};
-  });
-  charts['chart-ratio']=new Chart(canvas,{type:'line',data:{labels:sizes.map(s=>s.toLocaleString()),datasets},options:chartOptions('ns / comparison',v=>v.toFixed(4)+' ns/cmp')});
 }
 function renderTable(){
   if(!benchmarkData)return;
@@ -519,7 +484,7 @@ function renderTable(){
   document.getElementById('table-wrap').style.display='block';
   const sizes=[...new Set(results.map(r=>r.n))].sort((a,b)=>a-b);
   const table=document.getElementById('data-table');
-  let html=`<thead><tr><th>Algorithm</th>${sizes.map(s=>`<th colspan="3" style="text-align:center;border-left:1px solid var(--color-border)">n = ${s.toLocaleString()}</th>`).join('')}</tr><tr><th>Name</th>${sizes.map(()=>`<th style="border-left:1px solid var(--color-border)">Time(ms)</th><th>Comp</th><th>Swaps</th>`).join('')}</tr></thead><tbody>`;
+  let html=`<thead><tr><th>Algorithm</th>${sizes.map(s=>`<th colspan="3" style="text-align:center;border-left:1px solid var(--color-border)">n = ${s.toLocaleString()}</th>`).join('')}</tr><tr><th>Name</th>${sizes.map(()=>`<th style="border-left:1px solid var(--color-border)">Time (ms)</th><th>Comp</th><th>Swaps</th>`).join('')}</tr></thead><tbody>`;
   for(const s of SORTS){
     html+=`<tr><td>${s.name}</td>`;
     for(const sz of sizes){
@@ -536,7 +501,7 @@ function renderComplexity(){
   const grid=document.getElementById('complexity-grid');
   grid.innerHTML=COMPLEXITY.map((c,i)=>{
     const col=getColor(SORTS[i].color);
-    return`<div class="complexity-card"><div class="complexity-algo"><div class="algo-dot" style="background:${col};width:8px;height:8px;border-radius:2px;flex-shrink:0"></div>${c.name}</div><div class="complexity-row"><span class="complexity-label">Best Case</span><span class="complexity-val">${c.best}</span></div><div class="complexity-row"><span class="complexity-label">Average</span><span class="complexity-val">${c.avg}</span></div><div class="complexity-row"><span class="complexity-label">Worst Case</span><span class="complexity-val">${c.worst}</span></div><div class="complexity-row"><span class="complexity-label">Space</span><span class="complexity-val">${c.space}</span></div><div class="complexity-row"><span class="complexity-label">Stable</span><span class="complexity-val">${c.stable}</span></div></div>`;
+    return`<div class="complexity-card"><div class="complexity-algo"><div class="algo-dot" style="background:${col};width:8px;height:8px;border-radius:2px;flex-shrink:0"></div>${c.name}</div><div class="complexity-row"><span class="complexity-label">Best case</span><span class="complexity-val">${c.best}</span></div><div class="complexity-row"><span class="complexity-label">Average</span><span class="complexity-val">${c.avg}</span></div><div class="complexity-row"><span class="complexity-label">Worst case</span><span class="complexity-val">${c.worst}</span></div><div class="complexity-row"><span class="complexity-label">Space</span><span class="complexity-val">${c.space}</span></div><div class="complexity-row"><span class="complexity-label">Stable</span><span class="complexity-val">${c.stable}</span></div></div>`;
   }).join('');
 }
 (function(){
